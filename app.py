@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = mongo.db.recipes.find()
+    recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -96,11 +96,16 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route('/recipe_single/<recipe_id>')
-def recipe_single(recipe_id):
-    return render_template("recipepage.html",
+@app.route('/recipe_page/<recipe_id>')
+def recipe_page(recipe_id):
+    return render_template("recipe_page.html",
                            recipes=mongo.db.recipes.find(
                              {'_id': ObjectId(recipe_id)}))
+
+
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
 
 
 if __name__ == "__main__":

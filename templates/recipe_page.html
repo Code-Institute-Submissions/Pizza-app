@@ -6,11 +6,11 @@
             <div class="card card-single-recipe">
             {% for recipe in recipes %}
                     <div class="card-content">
-                        <h1 class="recipe-title-text amber-text card-title-recipep">{{recipe.recipe_name}}</h1> 
+                        <h1 class="recipe-title-text orange-text card-title-recipep">{{recipe.recipe_name}}</h1> 
                         <li class="divider"></li>
                         <br>
                         <p>{{recipe.recipe_intro}}</p><br> 
-                        <p >Category: {{recipe.category_name}}</p>                       
+                        <a class="white-text orange waves-effect waves-light btn" href="#">Category: {{recipe.category_name}}</a>                       
                     </div>
                     
                     <div class="card-image responsive-img">

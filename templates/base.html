@@ -40,7 +40,7 @@
                 >Profile</a
               >
             </li>
-            <li><a href="#">New Task</a></li>
+            <li><a href="{{url_for('add_recipe')}}">New Recipe</a></li>
             <li><a href="#">Manage Categories</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
@@ -60,7 +60,7 @@
             >Profile</a
           >
         </li>
-        <li><a href="#">New Task</a></li>
+        <li><a href="{{url_for('add_recipe')}}">New Recipe</a></li>
         <li><a href="#">Manage Categories</a></li>
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         {% else %}
