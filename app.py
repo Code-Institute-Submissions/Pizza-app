@@ -96,6 +96,13 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route('/recipe_single/<recipe_id>')
+def recipe_single(recipe_id):
+    return render_template("recipepage.html",
+                           recipes=mongo.db.recipes.find(
+                             {'_id': ObjectId(recipe_id)}))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+
+
+    <div class="row">
+        <div class="col s12 m12 l8 offset-l2 margin-bottom-4vh">
+            <div class="card card-single-recipe">
+            {% for recipe in recipes %}
+                    <div class="card-content">
+                        <h1 class="recipe-title-text amber-text card-title-recipep">{{recipe.recipe_name}}</h1> 
+                        <li class="divider"></li>
+                        <br>
+                        <p>{{recipe.recipe_intro}}</p><br> 
+                        <p >Category: {{recipe.category_name}}</p>                       
+                    </div>
+                    
+                    <div class="card-image responsive-img">
+                       <img class="responsive-img" src="{{recipe.photo_url}}"/>
+                    </div>
+                    
+                    <div>
+                      <div class="card-content ingredients-box">
+                           <strong>Ingredients: </strong>
+                           <li class="divider"></li>
+                           <br>
+                           <p> {{recipe.ingredients}} </p> 
+                      </div> 
+                    </div>
+                    
+                    <div class="card-content">
+                         <strong>How to Make it: </strong>
+                         <li class="divider"></li>
+                         <br> 
+                         <p>{{recipe.description}}</p>                       
+                    </div>
+                    <div class="card-content orange links-botton-card">
+                        <a class="edit-item-link white-text" href="">Edit <i class="fas fa-edit"></i></a> 
+                        <a class="delete-item-link white-text right" href=""> Delete <i class="fas fa-trash"></i></a>
+                    </div>
+                   
+            {% endfor %}
+        </div>
+    </div>
+  </div>
+
+
+{% endblock %}
