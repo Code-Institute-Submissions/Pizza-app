@@ -4,7 +4,7 @@
     {% for recipe in recipes %}
       
   <div class="row">
-    <div class="col s12 m6">
+    <div class="col s12 m4">
       <div class="card">
         <div class="card-image">
           <img src="{{recipe.photo_url}}">
@@ -15,8 +15,6 @@
         </div>
         <div class="card-action orange">
           <a class="white-text" href="{{url_for('recipe_single', recipe_id=recipe._id)}}">View recipe</a>
-          <a class="white-text" href="#">Edit</a>
-          <a class="white-text" href="#">Delete</a>
           <a class="white-text" href="#">{{recipe.category_name}}</a>
         </div>
       </div>
