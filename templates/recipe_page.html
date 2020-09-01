@@ -5,12 +5,13 @@
         <div class="col s12 m6 l8 offset-l2 margin-bottom-4vh center-align">
             <div class="card card-single-recipe">
             {% for recipe in recipes %}
-                    <div class="card-content">
-                        <h3 class="recipe-title-text orange-text card-title-recipep">{{recipe.recipe_name}}</h3> 
+                    <div class="card-content orange white-text">
+                        <h3 class="recipe-title-text  card-title-recipep">{{recipe.recipe_name}}</h3><br>
+                        <em >by: {{ recipe.created_by }}</em>
                         <li class="divider"></li>
                         <br>
-                        <p>{{recipe.recipe_intro}}</p><br> 
-                        <a class="white-text orange waves-effect waves-light btn" href="#">Category: {{recipe.category_name}}</a>                       
+                        <p>{{recipe.recipe_intro}}</p><br>
+                        <a class="white orange-text waves-effect waves-light btn" href="#">Category: {{recipe.category_name}}</a>                       
                     </div>
                     
                     <div class="card-image responsive-img">
