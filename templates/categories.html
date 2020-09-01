@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+  {% block content %}
+  <h3 class="orange-text center-align">All Categories</h3>
+  <div class="row">
+  {% for category in categories %}
+    <div class="col s12 m6">
+      <div class="card medium">
+        <div class="card-image">
+          <img src="{{category.photo_url}}">
+          <span class="card-title">{{category.category_name}}</span>
+        </div>
+        <div class="card-content">
+          <p>{{category.category_description}}</p>
+        </div>
+        <div class="card-action orange">
+          <a class="orange-text white waves-effect waves-light btn" href="#">{{category.category_name}}</a>
+          
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
