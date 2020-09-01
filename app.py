@@ -100,12 +100,13 @@ def logout():
 def recipe_page(recipe_id):
     return render_template("recipe_page.html",
                            recipes=mongo.db.recipes.find(
-                             {'_id': ObjectId(recipe_id)}))
+                               {'_id': ObjectId(recipe_id)}))
 
 
 @app.route("/add_recipe")
 def add_recipe():
-    return render_template("add_recipe.html")
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_recipe.html", categories=categories)
 
 
 if __name__ == "__main__":
