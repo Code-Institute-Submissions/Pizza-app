@@ -33,8 +33,12 @@
                          <p>{{recipe.description}}</p>                       
                     </div>
                     <div class="card-content orange links-botton-card">
-                        <a class="edit-item-link white-text" href="">Edit <i class="fas fa-edit"></i></a> 
-                        <a class="delete-item-link white-text right" href=""> Delete <i class="fas fa-trash"></i></a>
+                      <button type="edit" class="btn-large white orange-text">
+                        Edit Recipe <i class="fas fa-edit"></i>
+                      </button> 
+                        <button type="delete" class="btn-large white orange-text right">
+                        Delete Recipe <i class="fas fa-trash  "></i>
+                      </button> 
                     </div>
                    
             {% endfor %}
