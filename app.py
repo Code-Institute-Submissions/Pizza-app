@@ -103,6 +103,13 @@ def recipe_page(recipe_id):
                                {'_id': ObjectId(recipe_id)}))
 
 
+@app.route('/category_page/<category_id>')
+def category_page(category_id):
+    return render_template("category_page.html",
+                           categories=mongo.db.categories.find(
+                               {'_id': ObjectId(category_id)}))
+
+
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -136,6 +143,7 @@ def edit_recipe(recipe_id):
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe successfuly updated.")
+        return redirect(url_for("get_recipes"))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
@@ -169,6 +177,24 @@ def add_category():
         return redirect(url_for("get_categories"))
 
     return render_template("add_category.html")
+
+
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "category_description": request.form.get("category_description"),
+            "photo_url": request.form.get("photo_url")
+        }
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        flash("Category successfuly updated.")
+        return redirect(url_for("get_categories"))
+
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_category.html", category=category,
+                           categories=categories)
 
 
 if __name__ == "__main__":

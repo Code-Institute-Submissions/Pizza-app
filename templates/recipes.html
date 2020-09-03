@@ -14,7 +14,7 @@
         </div>
         <div class="card-action orange">
           <a class="orange-text white waves-effect waves-light btn" href="{{url_for('recipe_page', recipe_id=recipe._id)}}">View recipe</a>
-          <a class="orange-text white waves-effect waves-light btn" href="#">{{recipe.category_name}}</a>
+          <a class="orange-text white waves-effect waves-light btn" href="{{ url_for('get_categories') }}">{{recipe.category_name}}</a>
           <p class="white-text"><em>by: {{ recipe.created_by }}</em></p>
         </div>
       </div>
