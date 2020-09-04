@@ -18,7 +18,7 @@
                     </div>
                     <div class="card-action orange">
                       {% if session.user|lower == "admin"|lower %}
-                      <a class="btn-large green" href="{{ url_for('edit_category', category_id=category._id) }}">Edit <i class="fas fa-edit"></i></a>
+                      <a class="btn-large yellow darken-2" href="{{ url_for('edit_category', category_id=category._id) }}">Edit <i class="fas fa-edit"></i></a>
                       <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn-large red"> Delete  <i class="fas fa-trash"></i></a>
                       {%endif%}
                     </div>
