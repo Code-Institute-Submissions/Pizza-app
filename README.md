@@ -33,61 +33,35 @@ was built using the Flask Microframework in Python with a NoSQL (MongoDB) databa
 
 - When visiting the site the user first sees the homepage with the navbar, a list of all recipes and a seach bar.
 
-![](static/assets/images/homepage.png "Home page.")
-
 - On the navbar the first time user has the option to register to the site and the returning user to login.
 
-![](static/assets/images/login.png "Login picture")
-
-![](static/assets/images/register.png "Register picture")
-
 - Once the user is logged in/registered she/he has more options in the navbar: A Profile link to view the profile, add recipe link and a logout link.
-
-![](static/assets/images/profile.png "Profile page picture")
 
 - If the wishes to logout she/he just clicks on the logout button and the site takes them back to the login page.
 
 - Once a user has logged in she/he can go back to the homepage to view all recipes and search a particular recipe or click on the New recipe on the navbar in order to add a new recipe. That takes her/him to the add recipe form.
 
-![](static/assets/images/addrecipe.png "Add recipe page picture")
-
 - A user may also go to the categories page on the navbar and click on it whick takes her/him to the page with all available categories.
 Since the user is logged in she/he the ADD CATEGORY button appears on the top of the screen just below the navbar. 
 
-![](static/assets/images/categories.png "Categories picture")
-
-![](static/assets/images/addcategory.png "Add category picture")
-
 - Also the user can click the category name button on each of the category card and that will take her/him to the view category page where the entire selected category is displayed in a single page.
-
-![](static/assets/images/categorypage.png " category page picture")
 
 - While anyone can add a Category of styles of pizzas, only the the admin may edit or delete a category. So for regular user will not have a dispaly of the edit and delete category button.
 If the admin chooses to edit a Category she/he will press the edit button and that will take her/him to the edit category page.
-
-![](static/assets/images/editcategory.png " Edit category picture")
 
 - Admin may also delete a category by clickin the delete button when she visits the view category page by clicking the category button in the bottom of the card in the Categories page of the navbar.
 
 - In the Homepage every recipe is rendered in a separate card with an image, title, short summary, as well as a button with the category it belongs to and a button to view the entire recipe.
 If the user clicks on the style button the site takes her/him to the categories page where cards for different styles of pizzas are rendered.
 
-![](static/assets/images/homepagerecipes.png "Recipe cards")
-
 - If the user clicks on the view recipe button on one of the recipe cards in the homepage that takes her/him to the page where the entire recipe is rendered. On the bottom of the view recipe page the user finds the edit and delete buttons(only if the user posted the recipe her/himself or if the user is the admin.) 
 A user may only edit or delete a recipe if the recipe was posted by her/him or she/he is the admin. The Edit/Delete buttons do not appear otherwise.
 
-![](static/assets/images/recipepage.png "Recipe page")
-
 - A user may edit a recipe she/he has posted by clicking on the edit on the bottom of the recipe which takes her/him to the edit for.
-
-![](static/assets/images/editrecipe.png "Edit recipe page")
 
 - The user might also press the delete button which will just delete the recipe and return the user to the homepage.
 
 - Finally the user may click on the logout navbar option which will display a message of succesful logout and return the user back to the login page.
-
-![](static/assets/images/logout.png "Logout page")
  
  ## Wireframe Mockups
  
@@ -95,42 +69,8 @@ A user may only edit or delete a recipe if the recipe was posted by her/him or s
  
  ## Database schema:
 
-I have used three types of MongoDB collections: Recipes, Categories and Users:
-- Recipes example:
-{
-    "_id": {
-        "$oid": "5f4cb20343ec23196edc3bd7"
-    },
 
-    category_name: "NY-Style"
-    recipe_name: "Tremendous Brooklyn Pizza"
-    recipe_intro: "A traditional NY style pizza pie from notorious old brooklyn!"
-    ingredients: "Eggs, flour, salt, pepper, tomatoe sauce,cheese."
-    description: "Mix eggs and flour to make dough. Let the dough sit for half an hour. ..."
-    photo_url: "https://upload.wikimedia.org/wikipedia/commons/6/64/NYPizzaPie.jpg"
-    created_by: "Admin"
-}
 
-- Categories example:
-{
-    "_id": {
-        "$oid": "5f4cb1e043ec23196edc3bd6"
-    },
-  
-    category_name: "NY-Style"
-    category_description: "Traditional New York style recipes that focus on the notoriously chunk..."
-    photo_url: "https://feelingfoodish.com/wp-content/uploads/2013/06/Pizza-sauce.jpg"
-}
-
-- Users example:
-{
-    "_id": {
-        "$oid": "5f4ced94f37851c277141274"
-    },
-
-    username: "taposto"
-    password: "pbkdf2:sha256:150000$YydbbTEC$1c8b82ab7596dd07db58c2fcef99764fef59ab43..."
-}
 ## Technologies
 - HTMI5 to implement website project.
 - CSS3 to implement website project.
