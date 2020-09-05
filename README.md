@@ -68,7 +68,42 @@ A user may only edit or delete a recipe if the recipe was posted by her/him or s
  These can be found in the static/wireframes folder of this project.
  
  ## Database schema:
+I have used three types of MongoDB collections: Recipes, Categories and Users:
+- Recipes example:
+{
+   - "_id": {
+     -   "$oid": "5f4cb20343ec23196edc3bd7"
+    },
 
+   - category_name: "NY-Style"
+   - recipe_name: "Tremendous Brooklyn Pizza"
+   - recipe_intro: "A traditional NY style pizza pie from notorious old brooklyn!"
+   - ingredients: "Eggs, flour, salt, pepper, tomatoe sauce,cheese."
+   - description: "Mix eggs and flour to make dough. Let the dough sit for half an hour. ..."
+   - photo_url: "https://upload.wikimedia.org/wikipedia/commons/6/64/NYPizzaPie.jpg"
+   - created_by: "Admin"
+}
+
+- Categories example:
+{
+   - "_id": {
+       - "$oid": "5f4cb1e043ec23196edc3bd6"
+    },
+  
+    - category_name: "NY-Style"
+    - category_description: "Traditional New York style recipes that focus on the notoriously chunk..."
+    - photo_url: "https://feelingfoodish.com/wp-content/uploads/2013/06/Pizza-sauce.jpg"
+}
+
+- Users example:
+{
+  - "_id": {
+      - "$oid": "5f4ced94f37851c277141274"
+    },
+
+  - username: "taposto"
+  - password: "pbkdf2:sha256:150000$YydbbTEC$1c8b82ab7596dd07db58c2fcef99764fef59ab43..."
+}
 
 
 ## Technologies
